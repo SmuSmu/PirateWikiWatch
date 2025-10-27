@@ -6,6 +6,7 @@ $URI = "https://wiki.piratenpartei.de/wiki/index.php?title=Spezial:Defekte_Weite
 $req = Invoke-Webrequest -URI $URI
 
 $req
+$req.ParsedHtml
 
 $count = ($req.ParsedHtml.getElementsByTagName($searchTag) | Select-Object -First 1).innerhtml
 
