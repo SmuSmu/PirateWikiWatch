@@ -1,5 +1,5 @@
 $searchTag = "strong"
-$URI = https://wiki.piratenpartei.de/wiki/index.php?title=Spezial:Defekte_Weiterleitungen&limit=500 <# broken redirects #>
+$URI = "https://wiki.piratenpartei.de/wiki/index.php?title=Spezial:Defekte_Weiterleitungen&limit=500"
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 <# using TLS 1.2 is vitally important #>
 
