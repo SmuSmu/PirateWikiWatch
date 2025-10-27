@@ -1,15 +1,22 @@
 name: Daily run
 on:
   [workflow_dispatch]
-  schedule:
-    - cron: "3 3 * * *"
 
 jobs:
-    build:
-      name: Run Script
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v1
-        - name: Script
-          run: ./sync.ps1
-          shell: pwsh
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Powershell Run
+        run: ./brokenlinks.ps1
+        shell: pwsh
+            
+      - name: Commit & Push
+        uses: Andro999b/push@v1.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          force: true
+          message: 'Keep Repo fresh'
