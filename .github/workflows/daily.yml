@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Powershell Run
-        run: ./brokenlinks.ps1
+        run: ./brokenredirects.ps1
         shell: pwsh
             
       - name: Commit & Push
