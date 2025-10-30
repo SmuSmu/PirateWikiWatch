@@ -72,4 +72,4 @@ while($liney -le $MaxFloor) {
 
 #$svg.AppendChild($text)
 
-$xml.Save(".\broken-redirects.svg")
+$xml.Save("broken-redirects.svg")
