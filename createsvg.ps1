@@ -31,8 +31,8 @@ foreach ($Value in $Values)
 $xml = New-Object System.XML.XMLDocument
 
 $svg = $xml.CreateElement('svg')
-$svg.SetAttribute("xmlns", http://www.w3.org/2000/svg)
-$svg.SetAttribute("xmlns:xlink", http://www.w3.org/1999/xlink)
+$svg.SetAttribute("xmlns", "http://www.w3.org/2000/svg")
+$svg.SetAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink")
 $svg.SetAttribute("version", "1.1")
 #$svg.SetAttribute("style", "border: 1px solid red; width: 40%; height: 60px")
 $svg.SetAttribute("style", "background-color: #e6e6e6; width: 365px;")
