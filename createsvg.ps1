@@ -56,7 +56,7 @@ while($liney -le $MaxFloor) {
     $line.SetAttribute("y1", -$liney)
     $line.SetAttribute("x2", $Count)
     $line.SetAttribute("y2", -$liney)
-    $line.SetAttribute("style", "stroke:grey;stroke-width:1")
+    $line.SetAttribute("style", "stroke:#aaaaaa;stroke-width:1")
 
     $svg.AppendChild($line)
 
