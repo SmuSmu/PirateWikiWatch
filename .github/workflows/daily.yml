@@ -13,10 +13,6 @@ jobs:
       - name: Powershell Run
         run: ./brokenredirects.ps1
         shell: pwsh
-
-      - name: Create SVG
-        run: ./createsvg.ps1
-        shell: pwsh
             
       - name: Commit & Push
         uses: Andro999b/push@v1.3
