@@ -54,9 +54,9 @@ while($liney -le $MaxFloor) {
     $line = $xml.CreateElement("line")
     $line.SetAttribute("x1", "0")
     $line.SetAttribute("y1", -$liney)
-    $line.SetAttribute("x2", $Count)
+    $line.SetAttribute("x2", $MaximumValues)
     $line.SetAttribute("y2", -$liney)
-    $line.SetAttribute("style", "stroke:#aaaaaa;stroke-width:1")
+    $line.SetAttribute("style", "stroke:grey;stroke-width:1")
 
     $svg.AppendChild($line)
 
