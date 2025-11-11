@@ -2,7 +2,7 @@ name: Create SVG File
 on:
     workflow_dispatch:
     workflow_run:
-        workflows: ['Daily run']
+        workflows: ['Scrape']
         types: [completed]
 
 jobs:
@@ -22,4 +22,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
           force: true
-          message: 'Keep Repo fresh'
+          message: 'generate SVGs'
