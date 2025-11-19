@@ -15,8 +15,6 @@ $ToDo.keys | foreach-object {
 
     Write-Host Check Site : $URI
 
-    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 <# using TLS 1.2 is vitally important #>
-
     $req = Invoke-Webrequest -URI $URI
 
     $count = [regex]::Match($req.RawContent,$pattern).Groups[1].Value
@@ -26,5 +24,10 @@ $ToDo.keys | foreach-object {
         Write-Host Value : $count
         Get-Date -Format "yyyyMMdd," | Out-File -FilePath $File -Encoding ascii -Append -NoNewline -Force
         $count | Out-File -FilePath $File -Encoding ascii -Append -Force
+        }
+    else
+        {
+        Write-Host Not higher than zero : $count
+        Write-Host $req.RawContent
         }
     }
