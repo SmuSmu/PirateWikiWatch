@@ -30,6 +30,7 @@ $ToDo.keys | foreach-object {
         Write-Host Not higher than zero : $count
         #Write-Host $req.RawContent
         $count = 0
+        Get-Date -Format "yyyyMMdd," | Out-File -FilePath $File -Encoding ascii -Append -NoNewline -Force
         $count | Out-File -FilePath $File -Encoding ascii -Append -Force
         }
     }
