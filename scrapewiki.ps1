@@ -29,6 +29,7 @@ $ToDo.keys | foreach-object {
         {
         Write-Host Not higher than zero : $count
         #Write-Host $req.RawContent
-        Write-Host 0 | Out-File -FilePath $File -Encoding ascii -Append -Force
+        $count = 0
+        $count | Out-File -FilePath $File -Encoding ascii -Append -Force
         }
     }
