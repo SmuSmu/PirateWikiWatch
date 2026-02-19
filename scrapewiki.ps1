@@ -1,6 +1,6 @@
 [Hashtable]$ToDo = @{
-    'broken-redirects.csv' = 'https://wiki.piratenpartei.de/wiki/index.php?title=Spezial:Defekte_Weiterleitungen&limit=500'
-    #'double-redirects.csv' = 'https://wiki.piratenpartei.de/wiki/index.php?title=Spezial:Doppelte_Weiterleitungen&limit=5000'
+    #'broken-redirects.csv' = 'https://wiki.piratenpartei.de/wiki/index.php?title=Spezial:Defekte_Weiterleitungen&limit=500'
+    'double-redirects.csv' = 'https://wiki.piratenpartei.de/wiki/index.php?title=Spezial:Doppelte_Weiterleitungen&limit=5000'
     #'wished-files.csv' = 'https://wiki.piratenpartei.de/wiki/index.php?title=Spezial:Gew%C3%BCnschte_Dateien&limit=5000'
     #'wished-categories.csv' = 'https://wiki.piratenpartei.de/wiki/index.php?title=Spezial:Gew%C3%BCnschte_Kategorien&limit=5000'
     #'wished-sites.csv' = 'https://wiki.piratenpartei.de/wiki/index.php?title=Spezial:Gew%C3%BCnschte_Seiten&limit=5000&offset=30000'  ####
@@ -15,7 +15,7 @@ $ToDo.keys | foreach-object {
 
     Write-Host Check Site : $URI
 
-    $req = Invoke-Webrequest -URI $URI
+    $req = Invoke-Webrequest -URI $URI -UserAgent 'PirateWikiWatch'
 
     $count = [regex]::Match($req.RawContent,$pattern).Groups[1].Value
 
